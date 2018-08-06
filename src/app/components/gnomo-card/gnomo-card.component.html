@@ -3,10 +3,10 @@
 </nav>
 
 
-<div class="gnomo-container">
-    <div class="col-md-3">
+<div class="gnomo-container" *ngIf="gnomo">
+    <div class="col-md-3" *ngIf="gnomo.friends">
         <div class="img-gnomo"  *ngIf="gnomo.thumbnail != undefined" [ngStyle]="{'background-image': 'url(' + gnomo.thumbnail + ')'}"></div>
-        <div  class="list-group" >  <!-- *ngIf="gnomo.friends.length > 0" -->
+        <div  class="list-group" *ngIf="gnomo.friends.length > 0">  <!--  -->
             <h3 class="with-line">Social Information: Friends</h3>
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let friend of gnomo.friends">
                 <div class="d-flex w-100 justify-content-between">
@@ -23,11 +23,18 @@
         <p>Hair color: {{gnomo.hair_color}}</p>
         <p>weight: {{gnomo.weight}}</p>
         <p>height: {{gnomo.height}}</p>
-        <h3 class="with-line">Professional Information</h3>
-        <p>Professions: </p>
-        <ul>
-            <li *ngFor="let profession of gnomo.professions">{{profession}}</li>
-        </ul>
+        {{gnomo.professions}}
+        <div *ngIf="gnomo.professions">
+            <div *ngIf="gnomo.professions.length > 0">
+                <h3 class="with-line">Professional Information</h3>
+                <p>Professions: </p>
+                <ul>
+                    <li *ngFor="let profession of gnomo.professions">{{profession}}</li>
+                </ul>
+            </div>
+            
+        </div>
+        
     </div>
     
 </div>
