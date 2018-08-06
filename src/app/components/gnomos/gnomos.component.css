@@ -1,0 +1,29 @@
+.gnomos-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card-gnomo {
+    margin: 8px;
+}
+
+.card-body {
+    text-align: center;
+    margin: 12px;
+}
+
+.img-gnomo {
+    width: 100%;
+}
+
+.container-img-gnomo {
+    height: 33vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.card-title {
+    margin: 8px;
+}

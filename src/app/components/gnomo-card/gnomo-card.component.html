@@ -1,0 +1,43 @@
+<nav class="navbar navbar-dark bg-primary">
+    <button type="button" class="btn btn-light btn-back" [routerLink] = "['/gnomos']">Go back</button>
+</nav>
+
+
+<div class="gnomo-container">
+    <div class="col-md-3">
+        <div class="img-gnomo"  *ngIf="gnomo.thumbnail != undefined" [ngStyle]="{'background-image': 'url(' + gnomo.thumbnail + ')'}"></div>
+        <div  class="list-group" >  <!-- *ngIf="gnomo.friends.length > 0" -->
+            <h3 class="with-line">Social Information: Friends</h3>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let friend of gnomo.friends">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{friend}}</h5>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h1 class="text-info">{{gnomo.name}}</h1>
+        <h3 class="with-line">General Information</h3>
+        <p>Age: {{gnomo.age}}</p>
+        <p>Gender: {{gnomo.gender}}</p>
+        <p>Hair color: {{gnomo.hair_color}}</p>
+        <p>weight: {{gnomo.weight}}</p>
+        <p>height: {{gnomo.height}}</p>
+        <h3 class="with-line">Professional Information</h3>
+        <p>Professions: </p>
+        <ul>
+            <li *ngFor="let profession of gnomo.professions">{{profession}}</li>
+        </ul>
+    </div>
+    
+</div>
+
+
+<!-- age:  306
+friends:["Cogwitz Chillwidget", "Tinadette Chillbuster"]
+hair_color:"Pink"
+height:107.75835
+name:"Tobus Quickwhistle"
+professions:["Metalworker", "Woodcarver", "Stonecarver", " Tinker", "Tailor", "Potter"]
+thumbnail:"http://www.publicdomainpictures.net/pictures/10000/nahled/thinking-monkey-11282237747K8xB.jpg"
+weight:39.065952 -->
