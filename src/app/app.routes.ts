@@ -1,10 +1,10 @@
 import { RouterModule, Routes } from '@angular/router';
 import { GnomosComponent } from './components/gnomos/gnomos.component';
-import { GnomoCardComponent } from './components/gnomo-card/gnomo-card.component';
+import { GnomoComponent } from './components/gnomo/gnomo.component';
 
 const APP_ROUTES: Routes = [
     { path: 'gnomos', component: GnomosComponent },
-    { path: 'gnomo/:id', component: GnomoCardComponent },
+    { path: 'gnomo/:id', component: GnomoComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'gnomos' }
 ];
 

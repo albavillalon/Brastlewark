@@ -1,11 +1,12 @@
+<app-navbar></app-navbar>
+
+
 <div class="gnomos-container">
   <div class="card card-gnomo" style="width: 18rem;" *ngFor="let gnm of gnomos">
     <div class="container-img-gnomo" [ngStyle]="{'background-image': 'url(' + gnm.thumbnail + ')'}"></div>
-    <!-- <img class="card-img-top img-gnomo" [src]="gnomo.thumbnail" alt="Card image cap"> -->
     <div class="card-body">
       <h5 class="card-title">{{gnm.name}}</h5>
       <p class="card-text"></p>
-       <!-- <a [routerLink] = "['/gnomo']" href="#" class="btn btn-primary">Go details</a> -->
        <a class="nav-link btn btn-primary" [routerLink] = "['/gnomo', gnm.id]">Go details</a>
     </div>
   </div>
